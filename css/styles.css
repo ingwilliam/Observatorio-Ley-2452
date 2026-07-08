@@ -1,0 +1,487 @@
+/* ==========================================================================
+   CONFIGURACIÓN GLOBAL Y VARIABLES (:root)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Colores corporativos (Temas de la UI) */
+    --primary: #359946;
+    /* Verde institucional */
+    --accent: #004182;
+    /* Azul oscuro para textos principales y énfasis */
+    --ink: #102033;
+    /* Color de tinta casi negro para alta legibilidad */
+    --muted: #657386;
+    /* Gris para textos secundarios o deshabilitados */
+    --soft: #f5f9fc;
+    /* Fondo claro para contraste sutil */
+    --line: #dce8f0;
+    /* Gris claro para bordes y separadores */
+    --shadow: 0 10px 30px rgba(0, 35, 76, 0.08);
+    /* Sombra suave para elevación (Efecto Card) */
+
+    /* Variables heredadas de componentes de indicadores */
+    --profile-2: #eaf6ed;
+    --profile-dark: #206d30;
+}
+
+/* Reset básico y tipografía */
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background: #f8fbfd;
+    /* Fondo general de la aplicación */
+    color: var(--ink);
+}
+
+/* ==========================================================================
+   COMPONENTE: CABECERA (TOPBAR)
+   ========================================================================== */
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 34px;
+    display: flex;
+    /* Flexbox para alinear elementos en un solo eje */
+    align-items: center;
+    /* Centrado vertical de los hijos */
+    justify-content: space-between;
+    /* Envía las herramientas a la izquierda y el logo a la derecha */
+    position: sticky;
+    /* Se mantiene fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 100;
+    /* Asegura que quede por encima del contenido del main */
+}
+
+.left-tools {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* Espaciado automático entre el botón home y el título */
+}
+
+/* Botón Home con aspecto de App Moderna */
+.home-btn {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    /* Grid de 1x1 para centrar el SVG perfectamente */
+    place-items: center;
+    /* Atajo CSS para align-items y justify-items al centro */
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.top-title {
+    font-weight: 900;
+    color: var(--accent);
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+/* Subtítulo jerárquico dentro del título principal */
+.top-title span {
+    display: block;
+    /* Rompe la línea para comportarse como un bloque */
+    font-size: 11px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    font-weight: 800;
+}
+
+/* Badge de la marca (UDAE / Rama Judicial) */
+.brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-badge b {
+    display: block;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.brand-badge small {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   COMPONENTE: PESTAÑAS (TABS)
+   ========================================================================== */
+.tabs-bar {
+    padding: 20px 34px;
+}
+
+.tabs-wrap {
+    max-width: 1280px;
+    /* Ancho máximo alineado con el estándar del contenedor main */
+    margin: auto;
+    /* Centra el bloque horizontalmente */
+    display: flex;
+    gap: 12px;
+}
+
+.tab-btn {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 22px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+    /* Transición suave para hover y cambios de estado */
+}
+
+/* Estado activo: se inyecta dinámicamente mediante JS */
+.tab-btn.active {
+    background: linear-gradient(135deg, #206d30, #359946);
+    /* Degradado moderno */
+    color: #fff;
+    border: none;
+}
+
+.tab-btn svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    /* Hereda el color del texto del botón (negro o blanco si está activo) */
+    fill: none;
+    stroke-width: 2.5;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DEL CONTENEDOR PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    padding: 0 34px 60px 34px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* Caja base donde se renderizan los scripts dinámicos */
+.content-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================================================================
+   DASHBOARD DE INDICADORES (MÓDULO DINÁMICO)
+   ========================================================================== */
+.layout {
+    display: grid;
+    /* CSS Grid para manejar la estructura bidimensional */
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Tarjetas base del Dashboard */
+.card {
+    background: #fff;
+    border: 1px solid rgba(0, 65, 130, .1);
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 14px 38px rgba(0, 35, 76, .06);
+}
+
+/* Banner superior informativo */
+.banner-card {
+    background-color: var(--primary);
+    border: none;
+    padding: 30px;
+    border-radius: 28px;
+}
+
+.banner-card h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.banner-card p {
+    margin: 4px 0 0 0;
+    color: #ffffff;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+/* Consola o tag interno del banner */
+.console-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    /* Efecto de vidrio esmerilado (Glassmorphism) */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    margin-top: 15px;
+    display: inline-flex;
+    /* Ajusta el ancho estrictamente al tamaño del texto interno */
+    align-items: center;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Barra de selectores/filtros */
+.filter-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    /* 4 columnas iguales para selects y 1 automática para el botón */
+    gap: 15px;
+    align-items: end;
+    /* Alinea los elementos a la base inferior del contenedor */
+}
+
+.control-group label {
+    font-size: 10.5px;
+    font-weight: 900;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+select {
+    width: 100%;
+    border: 1px solid rgba(0, 65, 130, .14);
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px;
+    font-weight: 800;
+    margin-top: 5px;
+    outline: none;
+    /* Elimina el borde por defecto de enfoque de algunos navegadores */
+}
+
+/* Contenedor de las etiquetas de filtros activos */
+.active-filters {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.filter-tag {
+    background: #f0f4f8;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-remove-tag {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.btn-remove-tag:hover {
+    color: #ff4d4d;
+    /* Feedback visual de destrucción/eliminación */
+}
+
+/* Encabezado del módulo gráfico */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botones de utilidad de la interfaz */
+.btn-ui {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-weight: 800;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+
+/* Cuadrícula de KPIs */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 tarjetas de KPI en paralelo */
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Cajas individuales de métricas */
+.kpi-box {
+    background: var(--profile-2);
+    /* color-mix mezcla 18% del verde primario sobre un fondo blanco para generar un matiz sutil */
+    border: 1px solid color-mix(in srgb, var(--primary) 18%, white);
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.kpi-box h4 {
+    margin: 0;
+    font-size: 11px;
+    color: var(--profile-dark);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.kpi-box p {
+    margin: 8px 0 0;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   MODO INTERFAZ COMPLETA (PANTALLA COMPLETA / FULLSCREEN)
+   Nota para Junior: Cuando JS añade la clase '.fullscreen-mode' a '.layout',
+   reestructuramos por completo el flujo visual usando CSS Grid avanzado.
+   ========================================================================== */
+.layout.fullscreen-mode {
+    max-width: 100vw !important;
+    height: 100vh !important;
+    background: #f8fbfd;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    /* Divide la pantalla en 3 columnas fijas/flexibles: Panel izquierdo, área central y panel derecho */
+    grid-template-columns: 280px 1fr 340px;
+    grid-template-rows: auto 1fr;
+    /* Fila superior automática, el resto ocupa todo el alto disponible */
+    gap: 20px;
+    position: fixed;
+    /* Congela el componente sobre toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    /* Prioridad absoluta sobre el viewport */
+}
+
+/* Fila 1 (Banner): Ocupa desde la primera línea de columna hasta la última (-1) */
+.layout.fullscreen-mode> :nth-child(1) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    border-radius: 20px;
+}
+
+/* Fila 2 - Columna 1 (Caja de Filtros) */
+.layout.fullscreen-mode> :nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    border-radius: 20px;
+    height: 100%;
+}
+
+/* Modificación interna de filtros para comportamiento tipo Sidebar */
+.layout.fullscreen-mode .filter-bar {
+    display: flex;
+    flex-direction: column;
+    /* Cambia de horizontal a vertical en pantalla completa */
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Oculta selectores secundarios no requeridos en modo analítico estricto */
+.layout.fullscreen-mode .filter-bar .control-group:not(:nth-child(1)) {
+    display: none;
+}
+
+.layout.fullscreen-mode .filter-bar button {
+    display: none;
+}
+
+/* Énfasis visual en el selector principal en modo completo */
+.layout.fullscreen-mode #indSelect {
+    height: auto;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* Fila 2 - Columnas 2 y 3 (Contenedor de Gráfica + KPIs) */
+.layout.fullscreen-mode> :nth-child(3) {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    /* Divide la zona en Gráfica (izquierda) y KPIs (derecha) */
+    gap: 20px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.layout.fullscreen-mode> :nth-child(3) .chart-header {
+    grid-column: 1 / -1;
+    /* El título del gráfico abarca todo el ancho interno */
+}
+
+.layout.fullscreen-mode> :nth-child(3)>div:nth-of-type(2) {
+    grid-column: 1 / 2;
+    height: calc(100% - 80px) !important;
+    /* Descuenta el tamaño del header para que el canvas de Chart.js sea responsivo */
+}
+
+/* Transformación de KPIs en una barra lateral con Scroll interno autónomo */
+.layout.fullscreen-mode .kpi-grid {
+    grid-column: 2 / 3;
+    grid-template-columns: 1fr !important;
+    /* Pasa de 4 columnas en horizontal a 1 sola en vertical */
+    margin-top: 0;
+    gap: 15px;
+    overflow-y: auto;
+    /* Permite hacer scroll vertical si las cajas de KPI exceden la pantalla */
+}
+
+.layout.fullscreen-mode .active-filters {
+    flex-direction: column;
+    /* Tags alineados en vertical dentro del Sidebar de filtros */
+    gap: 10px;
+}
