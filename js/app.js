@@ -139,7 +139,7 @@ window.render = function (index = 0) {
             window.renderIndicadores(content);
             break;
         case 'ruta':
-            window.renderRuta(content);
+            window.renderMapa(content);
             break;
         default:
             content.innerHTML = `<h1>${tabsData[index].name}</h1>`;
