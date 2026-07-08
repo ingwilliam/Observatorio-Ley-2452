@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Observatorio Ley 2452 de 2025 - UDAE</title>
+    <!-- CDN de Chart.js requerido para la pestaña de indicadores -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -11,7 +12,7 @@
 <body>
     <header class="topbar">
         <div class="left-tools">
-            <button id="homeBtn" class="home-btn" aria-label="Inicio" onclick="render(0)">
+            <button id="homeBtn" class="home-btn" aria-label="Inicio" onclick="window.render(0)">
                 <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2">
                     <path d="M3 11.5 12 4l9 7.5M5 10.5V21h14V10.5M9 21v-6h6v6" />
                 </svg>
@@ -39,6 +40,13 @@
         <div class="content-box" id="mainContent"></div>
     </main>
 
+    <!-- 1. Cargamos las vistas funcionales de cada pestaña -->
+    <script src="js/tabs/inicio.js"></script>
+    <script src="js/tabs/cambios.js"></script>
+    <script src="js/tabs/ruta.js"></script>
+    <script src="js/tabs/indicadores.js"></script>
+
+    <!-- 2. Cargamos el orquestador principal que monta la BD y maneja el router -->
     <script src="js/app.js"></script>
 </body>
 
