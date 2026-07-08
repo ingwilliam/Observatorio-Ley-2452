@@ -144,7 +144,7 @@ window.renderInicio = function (content) {
             </div>
 
             <div style="text-align: center; margin-top: 10px;">
-                <button onclick="window.render(3)" style="background: var(--accent); color: white; border: none; border-radius: 16px; padding: 14px 28px; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.2s;">
+                <button onclick="window.render(2)" style="background: var(--accent); color: white; border: none; border-radius: 16px; padding: 14px 28px; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.2s;">
                     Ir al Dashboard de Indicadores →
                 </button>
             </div>

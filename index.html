@@ -3,50 +3,74 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Observatorio Ley 2452 de 2025 - UDAE</title>
-    <!-- CDN de Chart.js requerido para la pestaña de indicadores -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Hojas de Estilo Core e Institucionales -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Precarga del CSS de Leaflet para mitigar el reflow y parpadeos en el cambio de pestañas -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- CDN de Chart.js requerido para la analítica del Banco de Indicadores -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <header class="topbar">
+    <!-- Barra de Navegación Superior Institucional (Topbar) -->
+    <header class="topbar" role="banner">
+        <!-- Izquierda: Identidad de la Aplicación -->
         <div class="left-tools">
-            <button id="homeBtn" class="home-btn" aria-label="Inicio" onclick="window.render(0)">
-                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2">
+            <button id="homeBtn" class="home-btn" aria-label="Volver al Inicio del Observatorio"
+                onclick="window.render(0)">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2"
+                    aria-hidden="true">
                     <path d="M3 11.5 12 4l9 7.5M5 10.5V21h14V10.5M9 21v-6h6v6" />
                 </svg>
             </button>
-            <div class="top-title">Observatorio Ley 2452<span>Unidad de Desarrollo y Análisis Estadístico · Rama
-                    Judicial</span></div>
+            <div class="top-title">
+                Observatorio de Justicia Laboral
+                <span>Monitoreo de Implementación · Ley 2452 de 2025</span>
+            </div>
         </div>
-        <div class="brand-badge">
+
+        <!-- Derecha: Sello Institucional Minimalista -->
+        <div class="brand-badge" aria-hidden="true" style="display: flex; align-items: center; gap: 10px;">
+            <div class="top-title" style="text-align: right;">
+                UDAE
+                <span>Rama Judicial</span>
+            </div>
             <span
-                style="width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:#fff;border:1px solid #dce8f0">
-                <svg viewBox="0 0 24 24" width="22">
+                style="width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #ffffff; border: 1px solid #dce8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <svg viewBox="0 0 24 24" width="20">
                     <path d="M12 3v18M5 8h14M7 8l-3 6h6L7 8Zm10 0l-3 6h6l-3-6ZM4 21h16" stroke="#004182"
                         stroke-width="2" fill="none" />
                 </svg>
             </span>
-            <div class="top-title">Producto UDAE<span>Justicia laboral y seguridad social</span></div>
         </div>
     </header>
 
-    <div class="tabs-bar">
-        <div class="tabs-wrap" id="tabsContainer"></div>
-    </div>
+    <!-- Barra Dinámica de Pestañas Operacionales -->
+    <nav class="tabs-bar" role="navigation" aria-label="Menú principal del observatorio">
+        <div class="tabs-wrap" id="tabsContainer" role="tablist"></div>
+    </nav>
 
-    <main>
+    <!-- Contenedor Principal de Vistas Dinámicas (SPA) -->
+    <main role="main" aria-live="polite">
         <div class="content-box" id="mainContent"></div>
     </main>
 
-    <!-- 1. Cargamos las vistas funcionales de cada pestaña -->
+    <!-- ====================================================================== -->
+    <!-- 1. Capas funcionales del Ciclo de Vida del Observatorio (Vistas)       -->
+    <!-- ====================================================================== -->
     <script src="js/tabs/inicio.js"></script>
     <script src="js/tabs/cambios.js"></script>
     <script src="js/tabs/mapa.js"></script>
     <script src="js/tabs/indicadoresv2.js"></script>
 
-    <!-- 2. Cargamos el orquestador principal que monta la BD y maneja el router -->
+    <!-- ====================================================================== -->
+    <!-- 2. Orquestador de enrutamiento y estado global de la aplicación (SPA) -->
+    <!-- ====================================================================== -->
     <script src="js/app.js"></script>
 </body>
 
