@@ -17,6 +17,7 @@ window.renderInicio = function (content) {
                     </div>                    
                 </div>
             </div>
+            
 
             <div class="card" style="padding: 24px 30px; background: var(--soft); border-left: 5px solid var(--accent); box-shadow: var(--shadow);">
                 <h3 style="margin: 0 0 10px 0; color: var(--accent); font-size: 18px; font-weight: 800; letter-spacing: -0.5px;">
