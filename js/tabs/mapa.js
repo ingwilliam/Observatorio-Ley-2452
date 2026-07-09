@@ -39,7 +39,7 @@ window.renderMapa = function (content) {
                     </div>
                     <div style="background: white; padding: 12px; border-radius: 12px; border-top: 3px solid #f59e0b;">
                         <strong style="font-size: 12px; color: #f59e0b; display: block; margin-bottom: 4px;">🟡 Atención Especial (<40%)</strong>
-                        <span style="font-size: 11.5px; color: var(--muted); line-height: 1.3; display: block;">Distritos con un alto inventario remanente del sistema anterior que requiere mayor esfuerzo de evacuación.</span>
+                        <span style="font-size: 11.5px; color: var(--muted); line-height: 1.3; display: block;">Distritos con un alto inventario del régimen anterior que requiere mayor atención.</span>
                     </div>
                 </div>
                 <span style="font-size: 11.5px; color: var(--muted); font-style: italic; margin-top: 4px;">
