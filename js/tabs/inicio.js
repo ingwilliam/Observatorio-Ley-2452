@@ -14,10 +14,7 @@ window.renderInicio = function (content) {
                         <span style="color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 500;">
                             Seguimiento al nuevo Código Procesal del Trabajo y de la Seguridad Social
                         </span>
-                    </div>
-                    <div class="console-card" style="margin: 0; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);">
-                        <i class="dot"></i> Portal Oficial de Monitoreo
-                    </div>
+                    </div>                    
                 </div>
             </div>
 
