@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Observatorio de Justicia Laboral para el seguimiento de la implementación de la Ley 2452 de 2025.">
+
+    <title>Observatorio de Justicia Laboral · Ley 2452 de 2025</title>
+
+    <!-- Tipografía institucional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<!-- ================================================================ -->
+<!-- CABECERA INSTITUCIONAL: BLANCA Y NO STICKY                       -->
+<!-- ================================================================ -->
+<header class="site-header" role="banner">
+    <div class="site-header__inner">
+        <a class="institutional-brand" href="#inicio" aria-label="Ir al inicio del Observatorio">
+            <!--
+                REQUISITO:
+                Guarda aquí el logo horizontal preparado para fondo claro:
+                img/logo-rama-judicial-udae.svg
+            -->
+            <img
+                    src="img/logo-rama-judicial-udae.svg"
+                    alt="Rama Judicial de Colombia · Unidad de Desarrollo y Análisis Estadístico">
+        </a>
+
+        <div class="law-badge" aria-label="Ley objeto de seguimiento">
+            <span class="law-badge__status" aria-hidden="true"></span>
+            <span>Ley 2452 de 2025</span>
+        </div>
+    </div>
+</header>
+
+<!-- ================================================================ -->
+<!-- HERO: DOS COLUMNAS, BLANCO, TEXTO IZQUIERDO E IMAGEN DERECHA     -->
+<!-- ================================================================ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero__inner">
+        <div class="hero__copy">
+            <div class="hero__eyebrow">
+                <span aria-hidden="true"></span>
+                Observatorio institucional
+            </div>
+
+            <h1 id="hero-title">
+                Observatorio de<br>
+                Justicia Laboral
+            </h1>
+
+            <p class="hero__description">
+                Seguimiento técnico, territorial y estadístico a la implementación de la
+                <strong>Ley 2452 de 2025</strong>.
+            </p>
+        </div>
+
+        <div class="hero__visual">
+            <div class="hero__halo" aria-hidden="true"></div>
+            <div class="hero__line" aria-hidden="true"></div>
+
+            <!--
+                REQUISITO:
+                Guarda la imagen transparente en esta ruta exacta o cambia el src.
+            -->
+            <img
+                    src="img/tres_profesionales_colombianos_en_equipo.png"
+                    alt="Tres profesionales colombianos representativos de los ámbitos laboral, técnico y jurídico">
+        </div>
+    </div>
+</section>
+
+<!-- Sentinel utilizado para detectar cuándo el menú alcanza la parte superior -->
+<div class="tabs-sentinel" aria-hidden="true"></div>
+
+<!-- ================================================================ -->
+<!-- NAVEGACIÓN: FLOTA SOBRE EL HERO Y DESPUÉS QUEDA FIJA ARRIBA      -->
+<!-- ================================================================ -->
+<nav class="tabs-bar" role="navigation" aria-label="Menú principal del observatorio">
+    <div class="tabs-wrap" id="tabsContainer" role="tablist"></div>
+</nav>
+
+<!-- ================================================================ -->
+<!-- CONTENIDO DINÁMICO                                               -->
+<!-- ================================================================ -->
+<main role="main" aria-live="polite">
+    <div class="content-box" id="mainContent"></div>
+</main>
+
+<!-- Vistas funcionales -->
+<script src="js/tabs/inicio.js"></script>
+<script src="js/tabs/cambios.js"></script>
+<script src="js/tabs/mapa.js"></script>
+<script src="js/tabs/indicadoresv2.js"></script>
+
+<!-- Orquestador SPA -->
+<script src="js/app.js"></script>
+
+<!-- Estado visual del menú sticky -->
+<script>
+    (() => {
+        const nav = document.querySelector('.tabs-bar');
+        const sentinel = document.querySelector('.tabs-sentinel');
+
+        if (!nav || !sentinel || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => nav.classList.toggle('is-stuck', !entry.isIntersecting),
+            { threshold: 0 }
+        );
+
+        observer.observe(sentinel);
+    })();
+</script>
+
+<!-- UserWay -->
+<script>
+    (function (d) {
+        const s = d.createElement("script");
+        s.setAttribute("data-account", "n3fI6Xl0Vv");
+        s.setAttribute("data-position", "5");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document);
+</script>
+</body>
+
+</html>

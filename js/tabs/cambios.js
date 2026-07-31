@@ -57,7 +57,7 @@ window.renderCambios = function (content) {
             <div style="background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 20px;">💡</span>
-                    <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px;">
+                    <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: var(--accent); letter-spacing: 0.5px;">
                         Guía Rápida: Entendiendo la Reforma Laboral Procesal
                     </h3>
                 </div>

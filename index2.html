@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07345f">
+    <title>Observatorio Ley 2452 de 2025</title>
+
+    <!-- Tailwind CSS 4: desarrollo -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/styles-integrado.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<header class="site-header" role="banner">
+    <div class="topbar">
+        <a class="institutional-brand" href="#" aria-label="Ir al inicio del Observatorio">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3v18M5 8h14M7 8l-3 6h6L7 8Zm10 0l-3 6h6l-3-6ZM4 21h16"
+                              stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+            <span class="brand-copy">
+                    <strong>Rama Judicial · UDAE</strong>
+                    <small>Unidad de Desarrollo y Análisis Estadístico</small>
+                </span>
+        </a>
+
+        <div class="law-badge" aria-label="Marco normativo del observatorio">
+            <span class="law-badge__dot" aria-hidden="true"></span>
+            Ley 2452 de 2025
+        </div>
+    </div>
+
+    <section class="relative overflow-hidden border-b border-slate-200 bg-white">
+        <!-- Decoración muy tenue -->
+        <div
+                class="pointer-events-none absolute inset-0
+               bg-[radial-gradient(circle_at_82%_50%,rgba(53,153,70,0.10),transparent_32%)]">
+        </div>
+
+        <div
+                class="relative mx-auto grid min-h-[460px] max-w-[1380px]
+           grid-cols-1 px-8
+           lg:grid-cols-[54%_46%] lg:px-12"
+        >
+            <!-- Columna izquierda -->
+            <div class="flex items-center py-16">
+                <div class="max-w-[720px] text-left">
+                    <div class="mb-5 flex items-center gap-3">
+                        <span class="h-px w-10 bg-primary"></span>
+
+                        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">
+                            Observatorio institucional
+                        </p>
+                    </div>
+
+                    <h1
+                            class="text-5xl font-black leading-[0.98]
+                           tracking-[-0.055em] text-accent
+                           lg:text-7xl"
+                    >
+                        Observatorio<br>
+                        Laboral
+                    </h1>
+
+                    <p class="mt-7 max-w-[620px] text-lg font-semibold leading-8 text-slate-600">
+                        Seguimiento técnico, territorial y estadístico a la
+                        implementación de la Ley 2452 de 2025.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="relative flex min-h-[420px] items-end justify-center overflow-hidden lg:justify-end">
+
+                <!-- Halo suave -->
+                <div
+                        class="pointer-events-none absolute bottom-[-18%] right-[-5%]
+               h-[115%] w-[105%] rounded-full
+               bg-[radial-gradient(circle,rgba(53,153,70,0.12)_0%,rgba(0,65,130,0.05)_44%,transparent_72%)]">
+                </div>
+
+                <!-- Línea inferior -->
+                <div
+                        class="absolute bottom-0 right-[4%] h-[3px] w-[78%]
+               rounded-full bg-primary/60">
+                </div>
+
+                <img
+                        src="./img/trabajadores.png"
+                        alt="Profesionales colombianos del ámbito laboral, técnico y jurídico"
+                        class="relative z-10 block h-auto
+               max-h-[430px] w-auto max-w-full
+               object-contain object-bottom
+               drop-shadow-[0_22px_20px_rgba(0,65,130,0.15)]"
+                >
+            </div>
+        </div>
+    </section>
+
+    <nav class="tabs-bar" aria-label="Menú principal del observatorio">
+        <div class="tabs-wrap" id="tabsContainer" role="tablist"></div>
+    </nav>
+</header>
+
+<main role="main" aria-live="polite">
+    <div class="content-box" id="mainContent"></div>
+</main>
+
+<script src="js/tabs/inicio.js"></script>
+<script src="js/tabs/cambios.js"></script>
+<script src="js/tabs/mapa.js"></script>
+<script src="js/tabs/indicadoresv2.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+    (function (d) {
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "n3fI6Xl0Vv");
+        s.setAttribute("data-position", "5");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document);
+</script>
+</body>
+
+</html>
